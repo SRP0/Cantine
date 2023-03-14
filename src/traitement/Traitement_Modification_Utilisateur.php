@@ -3,13 +3,13 @@ session_start();
 if (!isset($_SESSION['id'])){
     header('Location: main.php');
 }
-$bdd = new PDO("mysql:host=localhost;dbname=Cantine","root","");
-if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp'])
+$bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
+if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['motdepasse'])
 ){
-    $req = $bdd->prepare("UPDATE eleve SET nom=:nom, prenom=:prenom, email=:email, mdp=:mdp WHERE id_eleve=:id");
+    $req = $bdd->prepare("UPDATE utilisateur SET nom=:nom, prenom=:prenom, mail=:mail, motdepasse=:motdepasse WHERE id_utilisateur=:id");
     $req->execute(
         [
-            "email"=>$_POST['email'],
+            "mail"=>$_POST['mail'],
             "nom"=>$_POST['nom'],
             "prenom"=>$_POST['prenom'],
             "mdp"=>$_POST['mdp'],
@@ -17,6 +17,6 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
         ]);
     header("Location: main.php");
 }else{
-    header("Location: modifier.php?id_eleve=".$_POST['id']);
+    header("Location: modifier.php?id_utilisateur=".$_POST['id']);
 }
 ?>

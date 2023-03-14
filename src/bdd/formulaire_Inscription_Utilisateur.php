@@ -11,12 +11,12 @@ if (isset($_SESSION['id'])){
     <title>Inscription</title>
 </head>
 <body>
-<form method="post" action="Traitement_Inscription_Eleve.php">
+<form method="post" action="Traitement_Inscription_Utilisateur.php">
 <select>
     <?php
-    $bdd = new PDO("mysql:host=localhost;dbname=Cantine","root","");
-    $req = $bdd->prepare('SELECT * FROM eleve WHERE classe = :classe');
-    $req->execute(['email' => $_POST['login'], 'mdp' => $_POST['mdp']]);
+    $bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
+    $req = $bdd->prepare('SELECT * FROM utilisateur');
+    $req->execute(['mail' => $_POST['login'], 'motdepasse' => $_POST['motdepasse']]);
     $result = $req->fetch();
     ?>
 </select>
@@ -24,9 +24,9 @@ if (isset($_SESSION['id'])){
     <br>
   <label>Prenom : <input type="text" name="prenom"></label>
     <br>
-  <label>Email : <input type="email" name="email"></label>
+  <label>Email : <input type="mail" name="mail"></label>
     <br>
-  <label>Mot de passe : <input type="password" name="mdp"></label>
+  <label>Mot de passe : <input type="password" name="motdepasse"></label>
     <br>
   <input type="submit" value="Valider">
 </form>

@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location: formulaire_Connexion_Eleve.html");
+header("Location: formulaire_Connexion_Utilisateur.html");
 ?>

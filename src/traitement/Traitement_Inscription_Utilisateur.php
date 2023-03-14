@@ -1,31 +1,30 @@
 <?php
 if (isset($_SESSION['id'])){
-    header("Location: formulaire_Inscription_Eleve.php");
+    header("Location: formulaire_Inscription_Utilisateur.php");
 }
 try
 {
-    $bdd = new PDO("mysql:host=localhost;dbname=Cantine","root","");
+    $bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
 } catch (Exception $e){
     die('Erreur : '. $e->getMessage());
 }
 $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
 $classe = $_POST["classe"];
-$email = $_POST["email"];
+$email = $_POST["mail"];
 $motdepasse = motdepasse_hash($_POST["motdepasse"], MOTDEPASSE_DEFAULT);
 
-$req = $bdd->prepare('INSERT INTO eleve (nom, prenom, classe, email, motdepasse)
-  VALUES(:nom, :prenom, :classe, :email, :motdepasse)');
+$req = $bdd->prepare('INSERT INTO utilisateur (nom, prenom, mail, motdepasse)
+  VALUES(:nom, :prenom, :mail, :motdepasse)');
 
 $req->execute(array(
     'nom' => $nom,
     'prenom' => $prenom,
-    'classe' => $classe,
-    'email' => $email,
+    'mail' => $email,
     'mdp' => $motdepasse,
 ));
 
-echo "L'eleve a bien ete ajouter !";
+echo "L'utilisateur a bien été ajouté !";
 
 
 

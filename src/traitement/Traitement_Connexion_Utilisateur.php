@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['login']) && isset($_POST['mdp'])) {
-    $bdd = new PDO("mysql:host=localhost;dbname=Cantine","root","");
+    $bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
     $req = $bdd->prepare('SELECT * FROM utilisateur WHERE mail = :mail AND mdp = :motdepasse');
     $req->execute(['mail' => $_POST['login'], 'motdepasse' => $_POST['motdepasse']]);
     $result = $req->fetch();

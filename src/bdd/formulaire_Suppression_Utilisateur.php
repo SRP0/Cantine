@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])){
-    header("Location: formulaire_Connexion_Eleve");
+    header("Location: formulaire_Connexion_Utilisateur");
 }
-$bdd = new PDO("mysql:host=localhost;dbname=Cantine","root","");
-$req = $bdd->prepare("SELECT * FROM eleve WHERE id_eleve = :id");
-$req->execute(['id'=>$_GET['id_eleve']]);
+$bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
+$req = $bdd->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id");
+$req->execute(['id'=>$_GET['id_utilisateur']]);
 $res = $req->fetch();
 ?>
 <!DOCTYPE html>
@@ -15,10 +15,10 @@ $res = $req->fetch();
     <title>Suppression</title>
 </head>
 <body>
-<form method="post" action="Traitement_Suppression_Eleve.php">
-    <label>etes vous sur de vouloir supprimer cette élève (<?=$res["id_eleve"]?>) <?=$res["prenom"]?></label>
+<form method="post" action="Traitement_Suppression_Utilisateur.php">
+    <label>Etes vous sur de vouloir supprimer cet utilisateur ? (<?=$res["id_utilisateur"]?>) <?=$res["prenom"]?></label>
     <br>
-    <input type="hidden" name="id" value="<?=$res["id_eleve"]?>">
+    <input type="hidden" name="id" value="<?=$res["id_utilisateur"]?>">
     <br>
     <input type="submit" value="Oui">
     <br>
