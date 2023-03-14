@@ -1,22 +1,22 @@
 <?php
 if (isset($_POST['login']) && isset($_POST['mdp'])) {
     $bdd = new PDO("mysql:host=localhost;dbname=Cantine","root","");
-    $req = $bdd->prepare('SELECT * FROM eleve WHERE email = :email AND mdp = :mdp');
-    $req->execute(['email' => $_POST['login'], 'mdp' => $_POST['mdp']]);
+    $req = $bdd->prepare('SELECT * FROM utilisateur WHERE mail = :mail AND mdp = :motdepasse');
+    $req->execute(['mail' => $_POST['login'], 'motdepasse' => $_POST['motdepasse']]);
     $result = $req->fetch();
 
-    if (!empty($result['id_eleve'])){
+    if (!empty($result['id_utilisateur'])){
         session_start();
-        $_SESSION['user'] = $result['id_eleve'];
-        $_SESSION['email'] = $result['email'];
+        $_SESSION['user'] = $result['id_utilisateur'];
+        $_SESSION['mail'] = $result['mail'];
         $_SESSION['nom'] = $result['nom'];
         $_SESSION['prenom'] = $result['prenom'];
         header("Location: main.php");
     }else{
-        header("Location: formulaire_Connexion_Eleve.html");
+        header("Location: formulaire_Connexion_Utilisateur.html");
     }
 }else{
-    header("Location: Formulaire_Connexion_Eleve.html");
+    header("Location: Formulaire_Connexion_Utilisateur.html");
 }
 // Connexion à la base de données
 //$host = "localhost";
