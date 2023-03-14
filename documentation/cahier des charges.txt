@@ -1,0 +1,13 @@
+Pour établir le site, il faut écrire la procédure ainsi que la structure de la base de données
+
+Sur la main page du site, on pourra afficher les informations du lycée ainsi que la cantine
+
+Un utilisateur va se connecter au site et donc recenser ses identifiants avec son mot de passe
+Une fois l'utilisateur connecté, son prénom et son nom sera affiché, ainsi que son affectation (prof ou élève)
+L'utilisateur pourra donc voir les jours où il a mangé ainsi que leur contenant (les plats)
+Il aura donc le choix de voir si c'est payé ou non
+L'utilisateur ayant fini de visualiser son compte, il peut ainsi se déconnecter
+
+Un utilisateur est composé d'un nom, prénom, affection, mail et mdp
+
+Un repas est composé d'un plat, d'un jour et d'un prix
