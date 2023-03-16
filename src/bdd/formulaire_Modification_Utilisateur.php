@@ -9,7 +9,7 @@ $req->execute(['id'=>$_GET["id_utilisateur"]]);
 $res = $req->fetch();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Modification</title>
