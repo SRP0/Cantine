@@ -5,6 +5,7 @@ if (isset($_SESSION['id'])){
     header("Location: ");
 }
 require_once "Utilisateur.php";
+require_once "Repas.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">

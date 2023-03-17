@@ -70,6 +70,5 @@ abstract class Utilisateur{
         $this->motdepasse = $motdepasse;
     }
 
-    abstract public function menu();
-    abstract public function prix();
+    abstract public function Menu();
 }

@@ -1,8 +1,10 @@
 <?php
 require_once 'Utilisateur.php';
-class Repas extends Utilisateur{
+class Repas extends Utilisateur
+{
     protected $prix;
     protected $name;
+
     /**
      * @return mixed
      */
@@ -45,10 +47,11 @@ class Repas extends Utilisateur{
     {
         // TODO: Implement prix() method.
     }
-    public function menu()
+    public function Menu()
     {
         return "Voici le plat correspondant";
         return $this->setName()."<br>";
         return $this->setPrix()."<br>";
     }
 }
+
