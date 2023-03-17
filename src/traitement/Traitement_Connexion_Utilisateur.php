@@ -16,7 +16,7 @@ if (isset($_POST['login']) && isset($_POST['mdp'])) {
         header("Location: formulaire_Connexion_Utilisateur.html");
     }
 }else{
-    header("Location: Formulaire_Connexion_Utilisateur.html");
+    header("Location: formulaire_Connexion_Utilisateur.html");
 }
 // Connexion à la base de données
 //$host = "localhost";
