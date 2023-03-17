@@ -12,6 +12,6 @@ if (isset($_POST['id'])){
         ]);
     header("Location: main.php");
 }else{
-    header("Location: supprimer.php?id_utilisateur".$_POST["id"]);
+    header("Location: main.php?id_utilisateur".$_POST["id"]);
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])){
-    header("Location: formulaire_Connexion_Utilisateur");
+    header("Location: connexion.html");
 }
 $bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
 $req = $bdd->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id");
@@ -15,7 +15,7 @@ $res = $req->fetch();
     <title>Suppression</title>
 </head>
 <body>
-<form method="post" action="Traitement_Suppression_Utilisateur.php">
+<form method="post" action="traitement">
     <label>Etes vous sur de vouloir supprimer cet utilisateur ? (<?=$res["id_utilisateur"]?>) <?=$res["prenom"]?></label>
     <br>
     <input type="hidden" name="id" value="<?=$res["id_utilisateur"]?>">

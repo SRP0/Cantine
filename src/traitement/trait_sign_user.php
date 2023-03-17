@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['id'])){
-    header("Location: formulaire_Inscription_Utilisateur.php");
+    header("Location: inscription.html");
 }
 try
 {
