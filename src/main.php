@@ -4,6 +4,7 @@ session_start();
 if (isset($_SESSION['id'])){
     header("Location: ");
 }
+require_once "Utilisateur.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
