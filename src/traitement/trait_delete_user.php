@@ -1,8 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])){
-    header('Location: main.php');
-    exit();
+    header('Location: main.php');  
 }
 $bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
 if (isset($_POST['id'])){
@@ -12,9 +11,7 @@ if (isset($_POST['id'])){
             "id" => $_POST["id"]
         ]);
     header("Location: main.php");
-    exit();
 }else{
     header("Location: main.php?id_utilisateur".$_POST["id"]);
-    exit();
 }
 ?>
