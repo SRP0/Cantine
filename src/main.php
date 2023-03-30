@@ -3,7 +3,7 @@ $bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
 session_start();
 if (isset($_SESSION['id'])){
     header("Location: ");
-exit();
+    exit();
 }
 require_once "Utilisateur.php";
 require_once "Repas.php";
