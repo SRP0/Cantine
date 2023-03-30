@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['id'])){
-    header("Location: inscription.html");
+    header("Location: ../../inscription.html");
 }
 try
 {
@@ -8,20 +8,14 @@ try
 } catch (Exception $e){
     die('Erreur : '. $e->getMessage());
 }
-$nom = $_POST["nom"];
-$prenom = $_POST["prenom"];
-$classe = $_POST["classe"];
-$email = $_POST["mail"];
-$motdepasse = motdepasse_hash($_POST["motdepasse"], MOTDEPASSE_DEFAULT);
-
-$req = $bdd->prepare('INSERT INTO utilisateur (nom, prenom, mail, motdepasse)
-  VALUES(:nom, :prenom, :mail, :motdepasse)');
+$req = $bdd->prepare('INSERT INTO utilisateur (nom, prenom, email, mdp)
+  VALUES(:nom, :prenom, :email, :mdp)');
 
 $req->execute(array(
-    'nom' => $nom,
-    'prenom' => $prenom,
-    'mail' => $email,
-    'mdp' => $motdepasse,
+    "nom"=>$_POST['nom'],
+    "prenom"=>$_POST['prenom'],
+    "email"=> $_POST['email'],
+    "mdp"=> $_POST['mdp'],
 ));
 
 echo "L'utilisateur a bien été ajouté !";

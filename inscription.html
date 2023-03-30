@@ -76,24 +76,24 @@
     <section class="signup">
       <div class="container">
         <div class="signup-content">
-          <div class="signup-form">
+          <div class="container">
             <h2 class="form-title">S'inscrire</h2>
-            <form method="POST" class="register-form" id="trait_sign_user.php">
+            <form method="POST" action="src/traitement/trait_sign_user.php">
               <div class="form-group">
-                <label for="name"><i class="zmdi zmdi-account "></i></label>
-                <input type="text" name="name" id="name" placeholder="Votre nom"/>
+                <label for="nom"><i class="zmdi zmdi-account "></i></label>
+                <input type="text" name="nom" id="nom" placeholder="Votre nom"/>
               </div>
               <div class="form-group">
-                <label for="forname"><i class="zmdi zmdi-account"></i></label>
-                <input type="text" name="forname" id="forname" placeholder="Votre prenom"/>
+                <label for="prenom"><i class="zmdi zmdi-account"></i></label>
+                <input type="text" name="prenom" id="prenom" placeholder="Votre prenom"/>
               </div>
               <div class="form-group">
                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                 <input type="email" name="email" id="email" placeholder="Votre Email"/>
               </div>
               <div class="form-group">
-                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                <input type="password" name="pass" id="pass" placeholder="Mot de passe"/>
+                <label for="mdp"><i class="zmdi zmdi-lock"></i></label>
+                <input type="password" name="mdp" id="mdp" placeholder="Mot de passe"/>
               </div>
               <div class="form-group form-button">
                 <input type="submit" name="signup" id="signup" class="form-submit" value="S'inscrire" href="trait_sign_user.php"/>
