@@ -63,6 +63,6 @@ require_once "Repas.php";
     }
     ?>
 </table>
-<a href="Deconnection_Utilisateur.php">Deconnecter</a>
+<a href="deco_user.php">Deconnecter</a>
 </body>
 </html>
