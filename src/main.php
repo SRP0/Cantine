@@ -1,5 +1,5 @@
 <?php
-$bdd = new PDO("mysql:host=localhost;dbame=cantine","root","");
+$bdd = new PDO("mysql:host=localhost;dbname=cantine","root","");
 session_start();
 if (isset($_SESSION['id'])){
     header("Location: ");
@@ -33,8 +33,8 @@ require_once "Repas.php";
     }
     ?>
 </select>
-    <input type="submit" formaction="formulaire_Modification_Utilisateur.php" value="Modifier">
-    <input type="submit" formaction="formulaire_Suppression_Utilisateur.php" value="Supprimer">
+    <input type="submit" formaction="form_edit_user.php" value="Modifier">
+    <input type="submit" formaction="form_delete_user.php" value="Supprimer">
 </form>
 <table>
     <tr>
@@ -54,8 +54,8 @@ require_once "Repas.php";
         <td>
             <form method="get">
                 <input type="hidden" name="id_utilisateur" value="<?=$utilisateur["id_utilisateur"] ?>">
-                <input type="submit" formaction="formulaire_Modification_Utilisateur.php" value="Modifier">
-                <input type="submit" formaction="formulaire_Suppression_Utilisateur.php" value="Supprimer">
+                <input type="submit" formaction="form_edit_user.php" value="Modifier">
+                <input type="submit" formaction="form_delete_user.php" value="Supprimer">
             </form>
         </td>
     </tr>
