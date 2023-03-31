@@ -19,7 +19,7 @@ require_once "Repas.php";
     Bonjour
 </h1>
 
-<a href="traitements">Ajouter</a>
+<a href="trait_sign_user.php">Ajouter</a>
 <form method="get">
 <select name="id_utilisateur">
     <?php
